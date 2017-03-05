@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row">
     <h1><%= @team.name %></h1>
-    <h4>Current Odds: <%= @team.odds %></h4>  
+    <% if @team.odds > 0 %>
+      <h4>Current Odds: +<%= @team.odds %></h4>
+    <% else %>
+    <h4>Current Odds: <%= @team.odds %></h4>
+    <% end %>
   </div>
   <div class="row tableDiv">
     <div class="col-md-9">
@@ -18,17 +22,29 @@
           </thead>
 
           <tbody class="bet-index scrollContent">
-            <%= render @bets %>
+            <%= render 'bets/index' %>
+            <tr class="totals">
+              <td>Totals</td>
+              <td></td>
+              <td></td>
+              <td><%= number_to_currency(@bets.sum(:amount_bet)) %></td>
+              <td><%= number_to_currency(@bets.sum(:payout)) %></td>
+            </tr>
           </tbody>
         </table>
       </div>
       <hr />
 
       <div class="newBetDiv">
-
             <%= link_to 'New Bet', new_bet_path, remote: true, class: "btn btn-success new_bet_btn" %><br/ >
-
       </div>
+
+      <hr />
+
+      <div class="homepageDiv">
+            <%= link_to 'Back to Main Page', root_path, class: "btn btn-primary new_bet_btn" %><br/ >
+      </div>
+
 
       <div id="betModal" class="modal fade">
       </div>

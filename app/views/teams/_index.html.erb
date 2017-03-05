@@ -1,7 +1,11 @@
 <% @teams.each do |team| %>
   <tr>
     <td><%= link_to team.name, team_path(team)%></td>
-    <td><%= team.odds %></td>
+    <% if team.odds > 0 %>
+      <td>+<%= team.odds %></td>
+    <% else %>
+      <td><%= team.odds %></td>
+    <% end %>
 
     <td width="3%">
 

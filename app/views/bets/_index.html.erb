@@ -2,9 +2,13 @@
   <tr>
     <td><%= bet.bet_date %></td>
     <td><%= bet.team.name %></td>
-    <td><%= bet.odds %></td>
-    <td><%= bet.amount_bet %></td>
-    <td><%= bet.payout %></td>
+    <% if bet.odds > 0 %>
+          <td>+<%= bet.odds %></td>
+    <% else %>
+          <td><%= bet.odds %></td>
+    <% end %>
+    <td><%= number_to_currency(bet.amount_bet) %></td>
+    <td><%= number_to_currency(bet.payout)%></td>
 
 
     <td width="3%">

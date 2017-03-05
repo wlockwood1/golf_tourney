@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
   def index
     @teams = Team.all
-    @bets = Bet.all
+    @bets = Bet.all.order('bet_date DESC')
 
 
     respond_to do |format|
@@ -12,7 +12,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
-    @bets = @team.bets.all
+    @bets = @team.bets.all.order('bet_date DESC')
   end
 
   def new
