@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row tableDiv">
+    <div class="col-md-3">
+      <div id="tableContainer" class="tableContainer">
+        <table class="table table-condensed table-hover scrollTable sortable" id="teams">
+          <thead class="fixedHeader">
+            <tr>
+              <th>Team Name</th>
+              <th>Current Odds</th>
+            </tr>
+          </thead>
+
+          <tbody class="team-index scrollContent">
+            <%= render "index" %>
+          </tbody>
+        </table>
+      </div>
+      <hr />
+
+      <div class="newBetDiv">
+
+            <%= link_to 'New Bet', new_bet_path, remote: true, class: "btn btn-success new_bet_btn" %><br/ >
+
+      </div>
+
+      <div id="betModal" class="modal fade">
+      </div>
+
+    </div>
+  </div>
+</div>

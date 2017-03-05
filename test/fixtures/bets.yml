@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bet_date: 2017-03-03
+  odds: 1
+  amount_bet: 1
+  payout: 1
+
+two:
+  bet_date: 2017-03-03
+  odds: 1
+  amount_bet: 1
+  payout: 1

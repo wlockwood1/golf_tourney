@@ -1,0 +1,25 @@
+<% @bets.each do |bet| %>
+  <tr>
+    <td><%= bet.bet_date %></td>
+    <td><%= bet.team.name %></td>
+    <td><%= bet.odds %></td>
+    <td><%= bet.amount_bet %></td>
+    <td><%= bet.payout %></td>
+
+
+    <td width="3%">
+
+        <%= link_to edit_bet_path(bet), remote: true do %>
+          <i class="glyphicon glyphicon-pencil"></i>
+        <% end %>
+
+    </td>
+    <td>
+
+        <%= link_to bet, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_bet", remote: true do %>
+          <i class="glyphicon glyphicon-remove-circle" ></i>
+        <% end %>
+
+    </td>
+  </tr>
+<% end %>

@@ -1,0 +1,21 @@
+<% @teams.each do |team| %>
+  <tr>
+    <td><%= link_to team.name, team_path(team)%></td>
+    <td><%= team.odds %></td>
+
+    <td width="3%">
+
+        <%= link_to edit_team_path(team), remote: true do %>
+          <i class="glyphicon glyphicon-pencil"></i>
+        <% end %>
+
+    </td>
+    <td>
+
+        <%= link_to team, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_team", remote: true do %>
+          <i class="glyphicon glyphicon-remove-circle" ></i>
+        <% end %>
+
+    </td>
+  </tr>
+<% end %>

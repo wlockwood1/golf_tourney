@@ -1,0 +1,25 @@
+<div class="modal-body">
+  <%= form_for(@bet, remote: true, html: { style: "display:inline;" }) do |f| %>
+    <ul class="errors"></ul>
+    <div class="form-group">
+      <%= f.label :bet_date %><br>
+      <%= f.date_field :bet_date, as: :date_picker, :value => Time.now.strftime('%Y-%m-%d') %>
+    </div>
+    <div class="form-group">
+      <%= f.label :team_id %><br>
+      <%= f.collection_select :team_id, Team.order(:name),:id,:formatted_name %>
+    </div>
+    <div class="form-group">
+      <%= f.label :odds %><br>
+      <%= f.text_field :odds, placeholder: "Enter odds" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :amount_bet %><br>
+      <%= f.text_field :amount_bet, placeholder: "Enter wager amount"%>
+    </div>
+    <div class="modal-footer">
+      <%= f.submit class: "btn btn-primary" %>
+      <%= link_to "Cancel", "#", class: "btn btn-danger", data: {dismiss: "modal"} %>
+    </div>
+  <% end %>
+</div>

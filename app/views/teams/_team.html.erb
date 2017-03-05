@@ -1,0 +1,6 @@
+<tr>
+  <td><%= team.name %></td>
+  <td><%= team.odds %></td>
+  <td><%= link_to 'Edit', edit_team_path(team), remote: true, class: "btn btn-default" %></td>
+  <td><%= link_to 'Delete', team_delete_path(team), remote: true, class: "btn btn-danger" %></td>
+</tr>

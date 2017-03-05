@@ -1,0 +1,9 @@
+$("ul.errors").html("")
+<% if @bet.errors.any? %>
+  <% @bet.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $(".bet-index").html("<%= escape_javascript(render 'index') %>")
+  $("#betModal").modal("hide")
+<% end %>

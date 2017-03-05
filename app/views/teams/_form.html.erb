@@ -1,0 +1,17 @@
+  <div class="modal-body">
+    <%= form_for(@team, remote: true, html: { style: "display:inline;" }) do |f| %>
+      <ul class="errors"></ul>
+      <div class="form-group">
+        <%= f.label :name %><br>
+        <%= f.text_field :name, placeholder: "Enter name of teams" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :odds %><br>
+        <%= f.text_field :odds, placeholder: "Enter current odds (eg -210) Enter 220 for +220, 300 for +300, etc." %>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit class: "btn btn-primary" %>
+        <%= link_to "Cancel", "#", class: "btn btn-danger", data: {dismiss: "modal"} %>
+      </div>
+    <% end %>
+  </div>
