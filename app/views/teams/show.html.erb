@@ -27,8 +27,8 @@
               <td>Totals</td>
               <td></td>
               <td></td>
-              <td><%= number_to_currency(@bets.sum(:amount_bet)) %></td>
-              <td><%= number_to_currency(@bets.sum(:payout)) %></td>
+              <td><%= number_to_currency(@bets.sum(:amount_bet), :precision => 0) %></td>
+              <td><%= number_to_currency(@bets.sum(:payout), :precision => 0) %></td>
             </tr>
           </tbody>
         </table>

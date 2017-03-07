@@ -6,6 +6,8 @@
     <% else %>
       <td><%= team.odds %></td>
     <% end %>
+    <td><%= number_to_currency(team.bets.sum(:amount_bet), :precision => 0) %></td>
+    <td><%= number_to_currency(team.bets.sum(:payout), :precision => 0)%></td>
 
     <td width="3%">
 

@@ -7,9 +7,8 @@
     <% else %>
           <td><%= bet.odds %></td>
     <% end %>
-    <td><%= number_to_currency(bet.amount_bet) %></td>
-    <td><%= number_to_currency(bet.payout)%></td>
-
+    <td><%= number_to_currency(bet.amount_bet, :precision => 0) %></td>
+    <td><%= number_to_currency(bet.payout, :precision => 0) %></td>
 
     <td width="3%">
 
