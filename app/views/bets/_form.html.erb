@@ -10,6 +10,10 @@
       <%= f.collection_select :team_id, Team.order(:name),:id,:formatted_name %>
     </div>
     <div class="form-group">
+      <%= f.label :bettor %><br>
+      <%= f.text_field :bettor, placeholder: "Enter name of person placing bet"%>
+    </div>
+    <div class="form-group">
       <%= f.label :odds, "Odds (don't include + if + odds, eg. enter 200 if odds are +200)" %><br>
       <%= f.text_field :odds, placeholder: "Enter current odds (eg -210) Enter 220 for +220, 300 for +300, etc." %>
     </div>

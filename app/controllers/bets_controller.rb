@@ -51,6 +51,6 @@ class BetsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def bet_params
-      params.require(:bet).permit(:team_id, :bet_date, :odds, :amount_bet, :payout)
+      params.require(:bet).permit(:team_id, :bet_date, :bettor, :odds, :amount_bet, :payout)
     end
 end
