@@ -11,19 +11,21 @@
     <td><%= number_to_currency(bet.amount_bet, :precision => 0) %></td>
     <td><%= number_to_currency(bet.payout, :precision => 0) %></td>
 
-    <td width="3%">
+    <% if current_user.try(:admin?) %>
+      <td width="3%">
 
-        <%= link_to edit_bet_path(bet), remote: true do %>
-          <i class="glyphicon glyphicon-pencil"></i>
-        <% end %>
+          <%= link_to edit_bet_path(bet), remote: true do %>
+            <i class="glyphicon glyphicon-pencil"></i>
+          <% end %>
 
-    </td>
-    <td>
+      </td>
+      <td>
 
-        <%= link_to bet, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_bet", remote: true do %>
-          <i class="glyphicon glyphicon-remove-circle" ></i>
-        <% end %>
+          <%= link_to bet, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_bet", remote: true do %>
+            <i class="glyphicon glyphicon-remove-circle" ></i>
+          <% end %>
 
-    </td>
+      </td>
+    <% end %>
   </tr>
 <% end %>
